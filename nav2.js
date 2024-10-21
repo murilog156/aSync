@@ -19,6 +19,6 @@ function abrir(type) {
 
 }
 
-function homePage(){
+function homePage() {
     fechaTudo()
 }

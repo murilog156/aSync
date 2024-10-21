@@ -1,12 +1,15 @@
 @import url(root.css);
 @import url(styles.css);
 
-
-.tit_atpv {
-    display: none;
+/*DISPLAY PROCURAÇÃO*/
+.tit_proc,
+.titulosBoxMain,
+.boxMainProcuracao {
+    display: flex;
 }
 
-.tit_proc {
+
+.tit_atpv {
     display: none;
 }
 
@@ -20,14 +23,14 @@
 .titulosBoxMain {
 
 
-    display: none;
+
     position: absolute;
     background-color: rgba(0, 255, 21, 0);
 
 }
 
 .boxMainProcuracao {
-    display: none;
+
     position: absolute;
     background-color: var(--corFundoWorkBench);
     align-items: center;
@@ -64,13 +67,14 @@ label {
 
     /*NOTEBOOK 1366 */
 
+
     .box1Proc {
 
         height: auto;
         width: 50%;
         display: flex;
         flex-direction: column;
-        gap: 10px;
+
     }
 
     .box2Proc {
@@ -80,7 +84,7 @@ label {
         width: 50%;
         display: flex;
         flex-direction: column;
-        gap: 10px;
+
     }
 
     .tit_atpv,
@@ -90,10 +94,9 @@ label {
 
     .titulosBoxMain {
         margin-left: calc(38vh + 5vh);
-        height: 79px;
+        height: 59px;
         width: 150vh;
         top: 80px;
-
         align-items: center;
         justify-content: center;
 
@@ -107,7 +110,7 @@ label {
         height: auto;
         width: 150vh;
         margin-left: calc(38vh + 5vh);
-        top: 160px;
+        top: 140px;
     }
 
     .form {
@@ -116,13 +119,30 @@ label {
 
     }
 
-    .nameInput {}
+    .nameInput {
+        padding: 5px 10px;
+        height: 22px;
+        width: 80%;
+        font-weight: 500;
+    }
 
-    .cpfInput {}
+    .cpfInput {
+        padding: 5px 10px;
+        height: 22px;
+        width: 50%;
+        font-weight: 500;
+    }
 
-    .veiculoInput {}
+    .veiculoInput {
+        padding: 5px 10px;
+        height: 22px;
+        width: 80%
+    }
 
-    label {}
+    label {
+        font-size: 16px;
+
+    }
 }
 
 
