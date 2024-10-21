@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+
+}
+
+button {
+    cursor: pointer;
+    border: 0;
+}
+
+
+
+body {
+    background-color: var(--corFundoBody);
+
+}
+
+header {
+    background-color: var(--corFundoHeader);
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 0px var(--CorBordaHeader);
+    border-style: none none solid none;
+}
+
+.logoMain1 {
+    position: absolute;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--corFundoNav);
+    border: 1px var(--CorBordaHeader);
+
+}
+
+nav ul li {
+    display: flex;
+    flex-direction: column;
+}
+
+.subMenuDiv {
+    display: flex;
+    flex-direction: column;
+    border: 0;
+}
+
+.homeBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--corIconeHome);
+    border: 2px var(--CorBordaHeader);
+    border-style: none none solid none;
+    color: var(--corFonteMenuBtns);
+    transition: all ease-in-out 0.2s;
+}
+
+.menuBtns {
+    background-color: var(--corIconeHome);
+    font-family: var(--fontePadrao);
+    color: var(--corFonteMenuBtns);
+    font-style: normal;
+    transition: all ease-in-out 100ms;
+}
+
+.homeBtn:hover,
+.menuBtns:hover {
+    background-color: var(--navBtnsColorOnHover);
+    color: var(--corFonteMenuBtnsOnHover);
+    font-weight: 500;
+
+
+}
+
+.colorNavBtn {
+    background-color: var(--corBotaoNav);
+}
+
+
+.dropdown {
+    max-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--corFundoHeader);
+    transition: max-height 0.4s ease-in-out;
+}
+
+.dropdown.ativo {
+    max-height: 300px;
+    /* Ajuste conforme necessário */
+}
+
+.dropdown button {
+    display: flex;
+    height: 8vh;
+    width: 100%;
+    padding: 10px;
+    font-family: var(--fontePadrao);
+    background-color: var(--corFundoHeader);
+    border: none;
+    text-align: left;
+    color: var(--corFonteSubMenuBtns);
+    align-items: center;
+    font-weight: 200;
+    border: 0;
+    transition: all ease-in-out 100ms;
+
+}
+
+.dropdown button:hover {
+    background-color: var(--navBtnsColorOnHover);
+    color: var(--corFonteSubMenuBtnsOnHover);
+    font-weight: 400;
+}
+
+@media (min-width: 1300px) and (max-width: 1800px) {
+
+    /*NOTEBOOK 1366 */
+    header {
+
+        height: 80px;
+        width: 100%;
+    }
+
+    .logoMain1 {
+
+        width: 15%;
+        height: 50px;
+        margin-left: 50px;
+
+    }
+
+    nav {
+        height: calc(100vh - 83px);
+        width: var(--larguraNav1366);
+    }
+
+
+
+    .homeBtn {
+
+        height: 100px;
+        width: 100%;
+        font-size: 50px;
+
+    }
+
+    .homeBtn:hover {
+        font-size: 55px;
+    }
+
+    .menuBtns {
+
+        font-size: 18px;
+        height: 60px;
+        font-weight: 400;
+
+    }
+
+    .menuBtns:hover {
+        font-size: 20px;
+    }
+
+    .dropdown button {
+        font-size: var(--fonteSizeSubMenu1366);
+    }
+
+    .dropdown button:hover {
+
+        font-size: var(--fonteSizeSubMenu1366OnHover);
+
+    }
+}
+
+@media (min-width: 1800px) and (min-height: 900px) {
+
+    /*DESKTOPP 1920*/
+    header {
+        height: 120px;
+        width: 100%;
+        background-color: var(--corFundoHeader);
+    }
+
+    .logoMain1 {
+        width: 15%;
+        height: 60px;
+        margin-left: 90px;
+    }
+
+    nav {
+        height: calc(100vh - 123px);
+        width: var(--larguraNav1920);
+    }
+
+    .homeBtn {
+
+        height: 100px;
+        width: 100%;
+        font-size: 50px;
+    }
+
+    .homeBtn:hover {
+        font-size: 60px;
+    }
+
+    .menuBtns {
+
+        font-size: 25px;
+        height: 80px;
+        font-weight: 400;
+    }
+
+    .menuBtns:hover {
+        font-size: 27px;
+    }
+
+    .dropdown button {
+        font-size: var(--fonteSizeSubMenu1920);
+
+    }
+
+    .dropdown button:hover {
+
+        font-size: var(--fonteSizeSubMenu1920OnHover);
+
+    }
+}

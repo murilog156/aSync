@@ -1,0 +1,36 @@
+@import url(styles.css);
+@import url(workbench.css);
+
+:root {
+    /*CORES*/
+    --corFundoBody: rgba(0, 26, 82, 0.76);
+    --corFundoHeader: rgb(39, 41, 100);
+    --CorBordaHeader: rgba(129, 158, 219, 0.459);
+    --corFundoNav: rgb(0, 60, 255);
+    --corIconeHome: rgba(48, 236, 195, 0.466);
+    --corBotaoNav: rgba(192, 185, 176, 0);
+    --navBtnsColorOnHover: rgba(11, 255, 202, 0.781);
+    --corFonteMenuBtns: rgb(39, 41, 100);
+    --corFonteMenuBtnsOnHover: rgb(0, 60, 255);
+    --corFonteSubMenuBtns: #ffffff9f;
+    --corFonteSubMenuBtnsOnHover: rgba(0, 0, 0, 0.76);
+    --corFonteTituloWorkbench: rgba(255, 255, 255, 0.685);
+    --corFundoInputs: rgba(221, 232, 255, 0.527);
+    --corFonteInputs: black;
+    --corFonteLabels: #fff;
+    /*FONTES*/
+    --fontePadrao: "Poppins", sans-serif;
+    /*TAMANHOS*/
+    --fonteSizeSubMenu1920: 18px;
+    --fonteSizeSubMenu1920OnHover: 20px;
+    --fonteSizeSubMenu1366: 15px;
+    --fonteSizeSubMenu1366OnHover: 17px;
+    --larguraNav1366: 38vh;
+    --larguraNav1920: 30vh;
+}
+
+:root {
+
+    --corFundoWorkBench: rgba(230, 33, 154, 0);
+
+}

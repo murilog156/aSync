@@ -1,0 +1,220 @@
+@import url(root.css);
+@import url(styles.css);
+
+
+.tit_atpv {
+    display: none;
+}
+
+.tit_proc {
+    display: none;
+}
+
+.tit_atpv,
+.tit_proc {
+    font-family: var(--fontePadrao);
+    color: var(--corFonteTituloWorkbench);
+
+}
+
+.titulosBoxMain {
+
+
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 255, 21, 0);
+
+}
+
+.boxMainProcuracao {
+    display: none;
+    position: absolute;
+    background-color: var(--corFundoWorkBench);
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+
+    display: flex;
+
+
+
+}
+
+.form input {
+    font-family: var(--fontePadrao);
+    color: var(--corFonteInputs);
+    font-size: 30px;
+    background-color: var(--corFundoInputs);
+    border: 3px rgb(30, 51, 236);
+    border-style: none none solid none;
+
+
+}
+
+label {
+
+    font-family: var(--fontePadrao);
+    color: var(--corFonteLabels);
+}
+
+
+@media (min-width: 1300px) and (max-width: 1800px) {
+
+    /*NOTEBOOK 1366 */
+
+    .box1Proc {
+
+        height: auto;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .box2Proc {
+
+        margin-bottom: 40px;
+        height: auto;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .tit_atpv,
+    .tit_proc {
+        font-size: 40px;
+    }
+
+    .titulosBoxMain {
+        margin-left: calc(38vh + 5vh);
+        height: 79px;
+        width: 150vh;
+        top: 80px;
+
+        align-items: center;
+        justify-content: center;
+
+
+    }
+
+
+
+    .boxMainProcuracao {
+
+        height: auto;
+        width: 150vh;
+        margin-left: calc(38vh + 5vh);
+        top: 160px;
+    }
+
+    .form {
+        height: auto;
+        width: 100%;
+
+    }
+
+    .nameInput {}
+
+    .cpfInput {}
+
+    .veiculoInput {}
+
+    label {}
+}
+
+
+
+@media (min-width: 1800px) and (min-height: 900px) {
+
+    /*DESKTOPP 1920*/
+
+    .box1Proc {
+
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .box2Proc {
+
+
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+    }
+
+    .tit_atpv,
+    .tit_proc {
+        font-size: 50px;
+    }
+
+    .tit_proc {
+        margin-right: 100px;
+    }
+
+    .titulosBoxMain {
+        margin-left: calc(30vh + 5vh);
+        height: 79px;
+        width: 912px;
+        top: 120px;
+        align-items: center;
+        justify-content: center;
+
+
+    }
+
+
+    .boxMainProcuracao {
+        height: 584px;
+        width: 912px;
+        margin-left: calc(30vh + 5vh);
+        top: 200px;
+    }
+
+    .form {
+        height: auto;
+        width: 100%;
+        gap: 40px;
+    }
+
+    .nameInput {
+        padding: 5px 10px;
+        height: 30px;
+        width: 100%;
+        font-weight: 500;
+    }
+
+    .cpfInput {
+        padding: 5px 10px;
+        height: 30px;
+        width: 50%;
+        font-weight: 500;
+    }
+
+    .veiculoInput {
+        padding: 5px 10px;
+        height: 30px;
+        width: 80%
+    }
+
+    label {
+        font-size: 20px;
+
+    }
+
+    .box2Proc label {
+
+        display: flex;
+        align-self: flex-start;
+        margin-left: 67px;
+
+    }
+}

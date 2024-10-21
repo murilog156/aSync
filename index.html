@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/root.css">
+    <link rel="stylesheet" href="styles/workbench.css">
+
+
+    <title>All Again</title>
+</head>
+
+<body>
+    <header>
+        <img class="logoMain1" src="media/LogoHeader.png" alt="logoPrincipal">
+    </header>
+
+    <nav>
+        <button onclick="homePage("")" id="homeBtn" class="homeBtn"><ion-icon name="home"></ion-icon></button>
+        <ul>
+            <li>
+                <button class="menuBtns" data-alvo="dropdown1">Cadastro cliente</button>
+
+                <div id="dropdown1" class="dropdown">
+                    <button class="subMenuBtns">Novo cliente</button>
+                    <button class="subMenuBtns">Listar clientes</button>
+                </div>
+            </li>
+
+
+            <li>
+                <button class="menuBtns" data-alvo="dropdown2">Gerar documentos</button>
+                <div id="dropdown2" class="dropdown">
+                    <button class="subMenuBtns" onclick="abrir('geradorProcuracao')">Gerar procuração</button>
+                    <button class="subMenuBtns">Gerar requerimento ATPV</button>
+                    <button class="subMenuBtns">Gerar contrato Alienação</button>
+                </div>
+
+            </li>
+        </ul>
+    </nav>
+
+    <div id="titulosBoxMainID" class="titulosBoxMain">
+        <h1 id="tituloGeradorProcID" class="tit_proc">Gerador de Procuração</h1>
+        <h1 class="tit_atpv">Gerador de ATPV</h1>
+    </div>
+    <div id="GeradorProcID" class="boxMainProcuracao">
+
+        <form action="" class="form">
+            <div class="box1Proc">
+
+                <label for="">Proprietário</label>
+                <input class="nameInput" name="name" type="text" name="" id="">
+
+                <label for="">CPF</label>
+                <input class="cpfInput" type="text" name="" id="">
+
+                <label for="">Procurador 1</label>
+                <input class="nameInput" type="text" name="" id="">
+
+                <label for="">CPF</label>
+                <input class="cpfInput" type="text" name="" id="">
+
+                <label for="">Procurador 2</label>
+                <input class="nameInput" type="text" name="" id="">
+
+                <label for="">CPF</label>
+                <input class="cpfInput" type="text" name="" id="">
+
+                <label for="">Procurador 3</label>
+                <input class="nameInput" type="text" name="" id="">
+
+                <label for="">CPF</label>
+                <input class="cpfInput" type="text" name="" id="">
+            </div>
+            <div class="box2Proc">
+
+                <label for="">Placa</label>
+                <input class="veiculoInput" type="text" name="" id="">
+
+                <label for="">Renavam</label>
+                <input class="veiculoInput" type="text" name="" id="">
+
+                <label for="">Chassi</label>
+                <input class="veiculoInput" type="text" name="" id="">
+
+                <label for="">Marca/Modelo</label>
+                <input class="veiculoInput" type="text" name="" id="">
+
+                <label for="">Ano Fab/Ano Mod</label>
+                <input class="veiculoInput" type="text" name="" id="">
+
+                <label for="">Cor</label>
+                <input class="veiculoInput" type="text" name="" id="">
+
+
+
+            </div>
+        </form>
+
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="nav.js"></script>
+    <script src="nav2.js"></script>
+</body>
+
+</html>
