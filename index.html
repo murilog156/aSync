@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="styles/workbench.css">
 
 
-    <title>All Again</title>
+    <title>Autosync</title>
 </head>
 
 <body>
@@ -48,69 +48,111 @@
     </nav>
 
     <div id="titulosBoxMainID" class="titulosBoxMain">
-        <h1 id="tituloGeradorProcID" class="tit_proc">Gerador de Procuração</h1>
-        <h1 class="tit_atpv">Gerador de ATPV</h1>
+        <h1 id="tituloGeradorProcID" class="tit_proc" style="user-select: none;">Gerador de Procuração</h1>
+        <h1 id="tituloGeradorAtpvID" class="tit_atpv" style="user-select: none;">Gerador de ATPV</h1>
     </div>
     <div id="GeradorProcID" class="boxMainProcuracao">
 
         <form action="" class="form">
             <div class="box1Proc">
 
-                <label for="">Proprietário</label>
+                <label style="user-select: none;" for="">Proprietário</label>
                 <input class="nameInput" name="name" type="text" name="" id="">
 
-                <label for="">CPF</label>
+                <label style="user-select: none;" for="">CPF</label>
                 <input class="cpfInput" type="text" name="" id="">
 
-                <label for="">Procurador 1</label>
+                <label style="user-select: none;" for="">Procurador 1</label>
                 <input class="nameInput" type="text" name="" id="">
 
-                <label for="">CPF</label>
+                <label style="user-select: none;" for="">CPF</label>
                 <input class="cpfInput" type="text" name="" id="">
 
-                <label for="">Procurador 2</label>
+                <label style="user-select: none;" for="">Procurador 2</label>
                 <input class="nameInput" type="text" name="" id="">
 
-                <label for="">CPF</label>
+                <label style="user-select: none;" for="">CPF</label>
                 <input class="cpfInput" type="text" name="" id="">
 
-                <label for="">Procurador 3</label>
+                <label style="user-select: none;" for="">Procurador 3</label>
                 <input class="nameInput" type="text" name="" id="">
 
-                <label for="">CPF</label>
+                <label style="user-select: none;" for="">CPF</label>
                 <input class="cpfInput" type="text" name="" id="">
             </div>
             <div class="box2Proc">
 
-                <label for="">Placa</label>
+                <label style="user-select: none;" for="">Placa</label>
                 <input class="veiculoInput" type="text" name="" id="">
 
-                <label for="">Renavam</label>
+                <label style="user-select: none;" for="">Renavam</label>
                 <input class="veiculoInput" type="text" name="" id="">
 
-                <label for="">Chassi</label>
+                <label style="user-select: none;" for="">Chassi</label>
                 <input class="veiculoInput" type="text" name="" id="">
 
-                <label for="">Marca/Modelo</label>
+                <label style="user-select: none;" for="">Marca/Modelo</label>
                 <input class="veiculoInput" type="text" name="" id="">
 
-                <label for="">Ano Fab/Ano Mod</label>
+                <label style="user-select: none;" for="">Ano Fab/Ano Mod</label>
                 <input class="veiculoInput" type="text" name="" id="">
 
-                <label for="">Cor</label>
+                <label style="user-select: none;" for="">Cor</label>
                 <input class="veiculoInput" type="text" name="" id="">
 
 
 
+            </div>
+            <div class="btnBed">
+                <button type="submit" class="btnWorkbench"><ion-icon
+                        name="checkmark-circle-outline"></ion-icon></button>
+                <button class="btnWorkbench">Limpar</button>
+                <button class="btnWorkbench">Voltar</button>
             </div>
         </form>
 
     </div>
 
+    <div id="GeradorAtpvID" class="boxMainAtpv">
+        <form class="form" action="">
+
+            <div>
+                <label for="">Vendedor</label>
+                <input tabindex="1" type="text">
+                <label for="">Comprador</label>
+                <input tabindex="3" type="text">
+                <label for="">Placa</label>
+                <input tabindex="5" type="text">
+                <label for="">CEP</label>
+                <input tabindex="7" type="text">
+                <label for="">Nº</label>
+                <input class="input1-5" type="text">
+
+
+            </div>
+            <div>
+                <label for="">CPF Vendedor</label>
+                <input tabindex="2" type="text">
+                <label for="">CPF Comprador</label>
+                <input tabindex="4" type="text">
+                <label for="">Chassi</label>
+                <input tabindex="6" type="text">
+                <label for="">Logradouro</label>
+                <input type="text">
+                <label for="">BAIRRO</label>
+                <input type="text">
+            </div>
+
+
+        </form>
+    </div>
+
+
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="nav.js"></script>
     <script src="nav2.js"></script>
+
 </body>
 
 </html>

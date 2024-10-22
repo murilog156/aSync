@@ -7,7 +7,6 @@ function fechaTudo() {
     titBoxMain.style.display = 'none';
     titGeradorProc.style.display = 'none';
 }
-
 function abrir(type) {
 
     if (type == 'geradorProcuracao') {
@@ -18,7 +17,6 @@ function abrir(type) {
     }
 
 }
-
 function homePage() {
     fechaTudo()
 }

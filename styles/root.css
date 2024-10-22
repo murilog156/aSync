@@ -18,6 +18,7 @@
     --corFundoInputs: rgba(221, 232, 255, 0.527);
     --corFonteInputs: black;
     --corFonteLabels: #fff;
+    --corBtnWorkbench: rgb(22, 142, 227);
     /*FONTES*/
     --fontePadrao: "Poppins", sans-serif;
     /*TAMANHOS*/
@@ -31,6 +32,6 @@
 
 :root {
 
-    --corFundoWorkBench: rgba(230, 33, 154, 0);
+    --corFundoWorkBench: rgba(109, 239, 3, 0);
 
 }
