@@ -114,6 +114,51 @@ label {
     color: var(--corFonteLabels);
 }
 
+.input1-5 {
+    width: 20%;
+}
+
+.input2-5 {
+    width: 30%;
+}
+
+.input3-5 {
+    width: 50%;
+}
+
+.input4-5 {
+    width: 75%;
+}
+
+.input5-5 {
+    width: 100%;
+}
+
+.boxMainAtpv form div .CEP {
+
+
+    display: flex;
+    flex-direction: row;
+    width: 275px;
+    height: 35px;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.boxMainAtpv form div .CEP2 {
+
+
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    height: auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
 /* --------------------- Responsividade --------------------- */
 
 /* ----- Notebook 1366px ----- */
@@ -189,9 +234,7 @@ label {
         font-weight: 500;
     }
 
-    .input1-5 {
-        width: 20%;
-    }
+
 
     .nameInput {
         width: 80%;
