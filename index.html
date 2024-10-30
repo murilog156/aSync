@@ -23,7 +23,7 @@
     </header>
 
     <nav>
-        <button onclick="homePage()" id="homeBtn" class="homeBtn"><ion-icon name="home"></ion-icon></button>
+        <button onclick="abrir('homePage')" id="homeBtn" class="homeBtn"><ion-icon name="home"></ion-icon></button>
         <ul>
             <li>
                 <button class="menuBtns" data-alvo="dropdown1">Cadastro cliente</button>
@@ -39,7 +39,7 @@
                 <button class="menuBtns" data-alvo="dropdown2">Gerar documentos</button>
                 <div id="dropdown2" class="dropdown">
                     <button class="subMenuBtns" onclick="abrir('geradorProcuracao')">Gerar procuração</button>
-                    <button class="subMenuBtns">Gerar requerimento ATPV</button>
+                    <button class="subMenuBtns" onclick="abrir('geradorAtpv')">Requerimento ATPV</button>
                     <button class="subMenuBtns">Gerar contrato Alienação</button>
                 </div>
 
@@ -47,58 +47,68 @@
         </ul>
     </nav>
 
-    <div id="titulosBoxMainID" class="titulosBoxMain">
-        <h1 id="tituloGeradorProcID" class="tit_proc" style="user-select: none;">Gerador de Procuração</h1>
-        <h1 id="tituloGeradorAtpvID" class="tit_atpv" style="user-select: none;">Gerador de ATPV</h1>
-    </div>
-    <div id="GeradorProcID" class="boxMainProcuracao">
 
-        <form action="" class="form">
+    <div id="geradorProcID" class="boxMainProcuracao">
+
+        <div>
+            <h1>Gerador de Procuração</h1>
+        </div>
+        <form id="procFormulario" onsubmit="gerarProc(event)" action="" class="form">
             <div class="box1Proc">
 
                 <label style="user-select: none;" for="">Proprietário</label>
-                <input class="nameInput" name="name" type="text" name="" id="">
+                <input style="text-transform: uppercase;" required id="proprietarioNome" class="nameInput" name="name"
+                    type="text" name="" id="">
 
                 <label style="user-select: none;" for="">CPF</label>
-                <input class="cpfInput" type="text" name="" id="">
+                <input required id="proprietarioCpf" class="cpfInput" type="text" name="cpf" maxlength="14"
+                    oninput="aplicarMascaraEValidar(this)" placeholder="000.000.000-00">
+                <p id="mensagem"></p>
 
                 <label style="user-select: none;" for="">Procurador 1</label>
-                <input class="nameInput" type="text" name="" id="">
+                <input required id="procurador1Nome" class="nameInput" type="text" name="" id="">
 
                 <label style="user-select: none;" for="">CPF</label>
-                <input class="cpfInput" type="text" name="" id="">
+                <input required id="procurador1Cpf" class="cpfInput" type="text" name="cpf" maxlength="14"
+                    oninput="aplicarMascaraEValidar(this)" placeholder="000.000.000-00">
+                <p id="mensagem"></p>
 
                 <label style="user-select: none;" for="">Procurador 2</label>
-                <input class="nameInput" type="text" name="" id="">
+                <input id="procurador2Nome" class="nameInput" type="text" name="" id="">
 
                 <label style="user-select: none;" for="">CPF</label>
-                <input class="cpfInput" type="text" name="" id="">
+                <input id="procurador2Cpf" class="cpfInput" type="text" name="cpf" maxlength="14"
+                    oninput="aplicarMascaraEValidar(this)" placeholder="000.000.000-00">
 
                 <label style="user-select: none;" for="">Procurador 3</label>
-                <input class="nameInput" type="text" name="" id="">
+                <input id="procurador3Nome" class="nameInput" type="text" name="" id="">
 
                 <label style="user-select: none;" for="">CPF</label>
-                <input class="cpfInput" type="text" name="" id="">
+                <input id="procurador3Cpf" class="cpfInput" type="text" name="cpf" maxlength="14"
+                    oninput="aplicarMascaraEValidar(this)" placeholder="000.000.000-00">
             </div>
             <div class="box2Proc">
 
                 <label style="user-select: none;" for="">Placa</label>
-                <input class="veiculoInput" type="text" name="" id="">
+                <input required id="placaProc" class="veiculoInput" type="text" name="" id="">
 
                 <label style="user-select: none;" for="">Renavam</label>
-                <input class="veiculoInput" type="text" name="" id="">
+                <input required id="renavamProc" class="veiculoInput" type="text" name="" id="">
 
                 <label style="user-select: none;" for="">Chassi</label>
-                <input class="veiculoInput" type="text" name="" id="">
+                <input required id="chassiProc" class="veiculoInput" type="text" name="" id="">
 
                 <label style="user-select: none;" for="">Marca/Modelo</label>
-                <input class="veiculoInput" type="text" name="" id="">
+                <input required id="marcaModeloProc" class="veiculoInput" type="text" name="" id="">
 
                 <label style="user-select: none;" for="">Ano Fab/Ano Mod</label>
-                <input class="veiculoInput" type="text" name="" id="">
+                <input required id="anoProc" class="veiculoInput" type="text" name="" id="">
 
                 <label style="user-select: none;" for="">Cor</label>
-                <input class="veiculoInput" type="text" name="" id="">
+                <input required id="corProc" class="veiculoInput" type="text" name="" id="">
+
+
+
 
 
 
@@ -112,40 +122,51 @@
         </form>
 
     </div>
+    <div id="geradorAtpvID" class="boxMainAtpv">
+        <div>
+            <h1>Requerimento ATPV</h1>
+        </div>
 
-    <div id="GeradorAtpvID" class="boxMainAtpv">
         <form class="form" action="">
 
             <div>
                 <label for="">Vendedor</label>
                 <input tabindex="1" type="text">
-                <label for="">Comprador</label>
+                <label for="">Adquirente</label>
                 <input tabindex="3" type="text">
-                <label for="">Placa</label>
+                <label for="">E-mail Vendedor</label>
                 <input tabindex="5" type="text">
-                <label for="">Logradouro</label>
+                <label for="">Placa</label>
                 <input tabindex="7" type="text">
+                <label for="">Logradouro</label>
+                <input tabindex="9" type="text">
 
                 <div class="CEP2">
                     <label for="">Nº</label>
                     <label for="">CEP</label>
+                    <label class="labelUF" for="">UF</label>
                 </div>
                 <div class="CEP">
                     <input tabindex="9" class="input2-5" type="text">
-                    <input tabindex="10" class="input4-5" type="text">
+                    <input tabindex="10" class="input3-5" type="text">
+                    <input tabindex="10" class="input0-5" type="text">
                 </div>
+                <label for="">Valor R$</label>
+                <input type="text">
 
             </div>
             <div>
                 <label for="">CPF Vendedor</label>
                 <input tabindex="2" type="text">
-                <label for="">CPF Comprador</label>
+                <label for="">CPF Adquirente</label>
                 <input tabindex="4" type="text">
+                <label for="">E-mail Adquirente</label>
+                <input tabindex="5" type="text">
                 <label for="">Chassi</label>
                 <input tabindex="6" type="text">
-                <label for="">Logradouro</label>
+                <label for="">Bairro</label>
                 <input tabindex="8" type="text">
-                <label for="">BAIRRO</label>
+                <label for="">Cidade</label>
                 <input tabindex="11" type="text">
             </div>
 
@@ -156,9 +177,16 @@
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="nav.js"></script>
+
+
     <script src="nav2.js"></script>
 
 </body>
 
 </html>
+
+
+
+
+
+type="text" name="cpf" maxlength="14" oninput="aplicarMascaraEValidar(this) placeholder="000.000.000-00"
