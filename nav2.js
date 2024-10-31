@@ -2,11 +2,7 @@
 const geraProc = document.getElementById('geradorProcID')
 const geraAtpv = document.getElementById('geradorAtpvID')
 const procForm = document.getElementById('procFormulario')
-let verificaCPF = null
 let menuAberto = "homepage"
-
-console.log(verificaCPF)
-console.log(menuAberto)
 
 document.querySelectorAll('.menuBtns').forEach(botao => {
 
@@ -28,60 +24,59 @@ document.querySelectorAll('.menuBtns').forEach(botao => {
     });
 });
 
-function cpfMask(v) {
-    v = v.replace(/\D/g, "");                      // Remove tudo que não é dígito
-    v = v.replace(/(\d{3})(\d)/, "$1.$2");         // Coloca ponto após o terceiro dígito
-    v = v.replace(/(\d{3})(\d)/, "$1.$2");         // Coloca ponto após o sexto dígito
-    v = v.replace(/(\d{3})(\d{1,2})$/, "$1-$2");   // Coloca hífen após o nono dígito
-    return v;
+function preencher() {
+
+    document.getElementById('proprietarioNome').value = "MURILO GRADEL SOUZA BRITO"
+    document.getElementById('proprietarioCpf').value = "038.882.260-07"
+    document.getElementById('procurador1Nome').value = "MARIO DUARTE SOUZA PEREIRA PINTO"
+    document.getElementById('procurador1Cpf').value = "397.001.626-64"
+    document.getElementById('procurador2Nome').value = "JECA TATU DO MATO FERRAZ BRAS"
+    document.getElementById('procurador2Cpf').value = "038.882.260-07"
+    document.getElementById('procurador3Nome').value = "DUARTE SOUZA"
+    document.getElementById('procurador3Cpf').value = "038.882.260-07"
+    document.getElementById('placaProc').value = "JTV-6591"
+    document.getElementById('renavamProc').value = "12345678935"
+    document.getElementById('marcaModeloProc').value = "Ferrari 456 GT"
+    document.getElementById('chassiProc').value = "9BGKC9103292B3"
+    document.getElementById('anoProc').value = "2010 - 2010"
+    document.getElementById('corProc').value = "VERMELHO"
 }
 
-// Função para validar CPF
+
+
+
+// Função para aplicar a máscara do CPF
+function cpfMask(value) {
+    return value
+        .replace(/\D/g, "") // Remove tudo que não for dígito
+        .replace(/(\d{3})(\d)/, "$1.$2") // Coloca o primeiro ponto
+        .replace(/(\d{3})(\d)/, "$1.$2") // Coloca o segundo ponto
+        .replace(/(\d{3})(\d{1,2})$/, "$1-$2"); // Coloca o hífen
+}
+// Função para validar se um CPF é válido
 function validarCPF(cpf) {
-    cpf = cpf.replace(/\D/g, "");  // Remove não-dígitos
+    if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false; // Valida tamanho e números repetidos
 
-    // Verifica se o CPF tem 11 dígitos ou é uma sequência inválida
-    if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) return false;
+    let soma = 0, resto;
 
-    // Função auxiliar para calcular o dígito verificador
-    const calcularDigito = (base) => {
-        let soma = 0;
-        for (let i = 0; i < base.length; i++) {
-            soma += parseInt(base.charAt(i)) * (base.length + 1 - i);
-        }
-        const resto = soma % 11;
-        return resto < 2 ? 0 : 11 - resto;
-    };
+    // Validação do primeiro dígito verificador
+    for (let i = 1; i <= 9; i++) soma += parseInt(cpf.substring(i - 1, i)) * (11 - i);
+    resto = (soma * 10) % 11;
+    if (resto === 10 || resto === 11) resto = 0;
+    if (resto !== parseInt(cpf.substring(9, 10))) return false;
 
-    // Calcula os dois dígitos verificadores
-    const digito1 = calcularDigito(cpf.substring(0, 9));
-    const digito2 = calcularDigito(cpf.substring(0, 9) + digito1);
+    soma = 0;
+    // Validação do segundo dígito verificador
+    for (let i = 1; i <= 10; i++) soma += parseInt(cpf.substring(i - 1, i)) * (12 - i);
+    resto = (soma * 10) % 11;
+    if (resto === 10 || resto === 11) resto = 0;
+    if (resto !== parseInt(cpf.substring(10, 11))) return false;
 
-    // Verifica se os dígitos calculados conferem com os do CPF
-    return digito1 === parseInt(cpf.charAt(9)) && digito2 === parseInt(cpf.charAt(10));
+    return true;
+
 }
 
-// Evento para aplicar a máscara e validar o CPF ao digitar
-function aplicarMascaraEValidar(input) {
-    input.value = cpfMask(input.value);
-    const cpfSemMascara = input.value.replace(/\D/g, "");
-
-    const mensagem = document.getElementById("mensagem");
-    if (cpfSemMascara.length === 11) {
-        if (validarCPF(cpfSemMascara)) {
-
-            verificaCPF = "1"
-
-        } else {
-            mensagem.textContent = "CPF Inválido!";
-            mensagem.style.color = "red";
-        }
-    } else {
-        mensagem.textContent = "";
-    }
-}
-
-
+// Inicializa a função de validação e máscara ao carregar a página
 
 
 
@@ -119,48 +114,46 @@ function fechaTudo() {
 
 
 }
-
 procForm.addEventListener('submit', function gerarProc() {
 
 })
-
 function gerarProc(event) {
-    const dadosProcPf = {
 
-        proprietario: document.getElementById('proprietarioNome').value,
-        cpfProprietario: document.getElementById('proprietarioCpf').value,
+    const qntdProcuradores = {
         proc1: document.getElementById('procurador1Nome').value,
         proc1Cpf: document.getElementById('procurador1Cpf').value,
         proc2: document.getElementById('procurador2Nome').value,
         proc2Cpf: document.getElementById('procurador2Cpf').value,
         proc3: document.getElementById('procurador3Nome').value,
-        procCpf: document.getElementById('procurador3Cpf').value,
+        proc3Cpf: document.getElementById('procurador3Cpf').value,
+    }
+    const dadosProcPf = {
+
+        proprietario: document.getElementById('proprietarioNome').value,
+        cpfProprietario: document.getElementById('proprietarioCpf').value,
         placa: document.getElementById('placaProc').value,
         renavam: document.getElementById('renavamProc').value,
         chassi: document.getElementById('chassiProc').value,
         marca: document.getElementById('marcaModeloProc').value,
-        ano: document.getElementById('anoProc').value
+        ano: document.getElementById('anoProc').value,
+        cor: document.getElementById('corProc').value,
 
     }
     event.preventDefault()
 
-    window.open(`./docsaida.html?proprietario=${dadosProcPf.proprietario}&
-cpfProprietario=${dadosProcPf.cpfProprietario}&
-procurador1=${dadosProcPf.proc1}&
-procurador1Cpf=${dadosProcPf.proc1Cpf}&
-procurador2=${dadosProcPf.proc2}&
-procurador2Cpf=${dadosProcPf.proc2Cpf}&
-procurador3=${dadosProcPf.proc3}&
-procurador3Cpf=${dadosProcPf.procCpf}&
-placa=${dadosProcPf.placa}&
-renavam=${dadosProcPf.renavam}&
-chassi=${dadosProcPf.chassi}&
-marca=${dadosProcPf.marca}&
-ano=${dadosProcPf.ano}&`)
+    verificaQuantosProcuradores(qntdProcuradores)
 
-    console.log(dadosProc)
+
+    window.open(`./docsaida.html?proprietario=${dadosProcPf.proprietario}&cpfProprietario=${dadosProcPf.cpfProprietario}&procurador1=${qntdProcuradores.proc1}&procurador1Cpf=${qntdProcuradores.proc1Cpf}&procurador2=${qntdProcuradores.proc2}&procurador2Cpf=${qntdProcuradores.proc2Cpf}&procurador3=${qntdProcuradores.proc3}&procurador3Cpf=${qntdProcuradores.procCpf}&placa=${dadosProcPf.placa}&renavam=${dadosProcPf.renavam}&chassi=${dadosProcPf.chassi}&marca=${dadosProcPf.marca}&ano=${dadosProcPf.ano}&cor=${dadosProcPf.cor}`)
+
 
 }
+
+
+
+
+
+
 
 
 

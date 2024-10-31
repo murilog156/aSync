@@ -57,55 +57,57 @@
             <div class="box1Proc">
 
                 <label style="user-select: none;" for="">Proprietário</label>
-                <input style="text-transform: uppercase;" required id="proprietarioNome" class="nameInput" name="name"
+                <input style="text-transform: uppercase;" id="proprietarioNome" class="nameInput" name="name"
                     type="text" name="" id="">
 
                 <label style="user-select: none;" for="">CPF</label>
-                <input required id="proprietarioCpf" class="cpfInput" type="text" name="cpf" maxlength="14"
-                    oninput="aplicarMascaraEValidar(this)" placeholder="000.000.000-00">
+                <input id="proprietarioCpf" class="cpfInput cpfInput1" type="text" name="cpf" maxlength="14"
+                    placeholder="000.000.000-00">
                 <p id="mensagem"></p>
 
                 <label style="user-select: none;" for="">Procurador 1</label>
-                <input required id="procurador1Nome" class="nameInput" type="text" name="" id="">
+                <input id="procurador1Nome" class="nameInput" type="text" name="" id="">
 
                 <label style="user-select: none;" for="">CPF</label>
-                <input required id="procurador1Cpf" class="cpfInput" type="text" name="cpf" maxlength="14"
-                    oninput="aplicarMascaraEValidar(this)" placeholder="000.000.000-00">
+                <input id="procurador1Cpf" class="cpfInput cpfInput2" type="text" name="cpf" maxlength="14"
+                    placeholder="000.000.000-00">
                 <p id="mensagem"></p>
 
                 <label style="user-select: none;" for="">Procurador 2</label>
                 <input id="procurador2Nome" class="nameInput" type="text" name="" id="">
 
                 <label style="user-select: none;" for="">CPF</label>
-                <input id="procurador2Cpf" class="cpfInput" type="text" name="cpf" maxlength="14"
-                    oninput="aplicarMascaraEValidar(this)" placeholder="000.000.000-00">
+                <input id="procurador2Cpf" class="cpfInput cpfInput3" type="text" name="cpf" maxlength="14"
+                    placeholder="000.000.000-00">
+                <p id="mensagem"></p>
 
                 <label style="user-select: none;" for="">Procurador 3</label>
                 <input id="procurador3Nome" class="nameInput" type="text" name="" id="">
 
                 <label style="user-select: none;" for="">CPF</label>
-                <input id="procurador3Cpf" class="cpfInput" type="text" name="cpf" maxlength="14"
-                    oninput="aplicarMascaraEValidar(this)" placeholder="000.000.000-00">
+                <input id="procurador3Cpf" class="cpfInput cpfInput4" type="text" name="cpf" maxlength="14"
+                    placeholder="000.000.000-00">
+                <p id="mensagem"></p>
             </div>
             <div class="box2Proc">
 
                 <label style="user-select: none;" for="">Placa</label>
-                <input required id="placaProc" class="veiculoInput" type="text" name="" id="">
+                <input id="placaProc" class="veiculoInput" type="text" name="" id="">
 
                 <label style="user-select: none;" for="">Renavam</label>
-                <input required id="renavamProc" class="veiculoInput" type="text" name="" id="">
+                <input id="renavamProc" class="veiculoInput" type="text" name="" id="">
 
                 <label style="user-select: none;" for="">Chassi</label>
-                <input required id="chassiProc" class="veiculoInput" type="text" name="" id="">
+                <input id="chassiProc" class="veiculoInput" type="text" name="" id="">
 
                 <label style="user-select: none;" for="">Marca/Modelo</label>
-                <input required id="marcaModeloProc" class="veiculoInput" type="text" name="" id="">
+                <input id="marcaModeloProc" class="veiculoInput" type="text" name="" id="">
 
                 <label style="user-select: none;" for="">Ano Fab/Ano Mod</label>
-                <input required id="anoProc" class="veiculoInput" type="text" name="" id="">
+                <input id="anoProc" class="veiculoInput" type="text" name="" id="">
 
                 <label style="user-select: none;" for="">Cor</label>
-                <input required id="corProc" class="veiculoInput" type="text" name="" id="">
+                <input id="corProc" class="veiculoInput" type="text" name="" id="">
 
 
 
@@ -117,7 +119,8 @@
                 <button type="submit" class="btnWorkbench"><ion-icon
                         name="checkmark-circle-outline"></ion-icon></button>
                 <button class="btnWorkbench">Limpar</button>
-                <button class="btnWorkbench">Voltar</button>
+                <button type="button" onclick="preencher()" class="btnWorkbench">Preencher</button>
+
             </div>
         </form>
 
@@ -184,9 +187,3 @@
 </body>
 
 </html>
-
-
-
-
-
-type="text" name="cpf" maxlength="14" oninput="aplicarMascaraEValidar(this) placeholder="000.000.000-00"
